@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2B8BA7AB-B800-4981-B67E-70BD25F06A20</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Localsocial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C53D0ECC-AD75-45EC-B9E5-D543C1B505FD</key>
+		<string>https://github.com/Augustyniak/RATreeView.git</string>
+		<key>C80A2289-2B56-4719-9490-B64275FF88CF</key>
+		<string>https://github.com/Rococo/localsocial-iOS.git</string>
+		<key>DCC88804-78A1-4AC1-A69D-CADA5DBB5876</key>
+		<string>https://github.com/Rococo/localsocial-library-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Localsocial/Localsocial.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C53D0ECC-AD75-45EC-B9E5-D543C1B505FD</key>
+		<string>../../../../RATreeView</string>
+		<key>C80A2289-2B56-4719-9490-B64275FF88CF</key>
+		<string>../../..</string>
+		<key>DCC88804-78A1-4AC1-A69D-CADA5DBB5876</key>
+		<string>../../../../localsocial-library-iOS</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Rococo/localsocial-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C80A2289-2B56-4719-9490-B64275FF88CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C80A2289-2B56-4719-9490-B64275FF88CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>localsocial-iOS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DCC88804-78A1-4AC1-A69D-CADA5DBB5876</string>
+			<key>IDESourceControlWCCName</key>
+			<string>localsocial-library-iOS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C53D0ECC-AD75-45EC-B9E5-D543C1B505FD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RATreeView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
