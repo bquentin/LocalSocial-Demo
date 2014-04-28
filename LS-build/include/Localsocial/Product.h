@@ -31,15 +31,12 @@
 
 @property (nonatomic, retain) NSString * uuid;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * description_1;
-@property (nonatomic, retain) NSString * description_2;
-@property (nonatomic, retain) NSString * url_image_1;
-@property (nonatomic, retain) NSString * url_image_2;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSString * url_video;
 @property (nonatomic, retain) NSString * twitterID;
 @property (nonatomic, retain) RTSPlace * place;
-@property (nonatomic, retain) RTSShopzone *shopzone;
+@property (nonatomic, retain) RTSShopzone * shopzone;
+@property (nonatomic, retain) NSSet    * cards;
 
 @end
 

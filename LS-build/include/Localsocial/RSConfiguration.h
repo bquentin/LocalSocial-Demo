@@ -35,7 +35,6 @@
 @property (nonatomic,readwrite)  unsigned int   range;                          // Range for nearby search (2km) - set to 0 for infinite
 @property (nonatomic,readwrite)  unsigned int   scanlog_time;                   // Proximity status to be sent to the server (every 60s) - set to 0 to disable
 
-@property (nonatomic,readwrite)  BOOL           cache_mode;
 @property (nonatomic,readwrite)  float          thresholdRefreshTime;
 @property (nonatomic,readwrite)  float          thresholdRefreshDistance;
 

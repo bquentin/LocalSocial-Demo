@@ -31,6 +31,7 @@
 #import "Radio.h"
 #import "Coupon.h"
 #import "Product.h"
+#import "Card.h"
 
 typedef enum {
     RS_OK,
@@ -128,20 +129,24 @@ typedef void(^RSURLConnectionHandler)(BOOL success, NSError* error, id response)
 -(NSDictionary *)getCurrentUser;
 
 // User only - Remote calls to be performed on any offer that is an "offer"
--(void)redeemOffer:(RTSOffer *) offer withCompletion:(RSURLConnectionHandler)completion;
--(void)dislikeOffer:(RTSOffer *)offer;
--(void)likeOffer:(RTSOffer *)offer;
+-(RSStatus)redeemOffer:(RTSOffer *) offer withCompletion:(RSURLConnectionHandler)completion;
+
+-(RSStatus)dislikeEntity:(NSObject *)entity withCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)likeEntity:(NSObject *)entity withCompletion:(RSURLConnectionHandler)completion;
+
+-(RSStatus)saveEntity:(NSObject *)entity withCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)unsaveEntity:(NSObject *)entity withCompletion:(RSURLConnectionHandler)completion;
 
 // User only - Remote call to share a string of information with the registered social network in param
--(void)share:(NSString *)message viaService:(LSService)service withCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)share:(NSString *)message viaService:(LSService)service withCompletion:(RSURLConnectionHandler)completion;
 
 // User only - Remote call for user managenement
--(void)refreshUserProfileWithCompletion:(RSURLConnectionHandler)completion;
--(void)refreshUserCouponsWithCompletion:(RSURLConnectionHandler)completion;
--(void)refreshUserAwardsWithCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)refreshUserProfileWithCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)refreshUserCouponsWithCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)refreshUserAwardsWithCompletion:(RSURLConnectionHandler)completion;
 
--(void)currentUserUpdate:(NSDictionary *)data withCompletion:(RSURLConnectionHandler)completion;
--(void)logoutWithCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)currentUserUpdate:(NSDictionary *)data withCompletion:(RSURLConnectionHandler)completion;
+-(RSStatus)currentUserLogoutWithCompletion:(RSURLConnectionHandler)completion;
 
 // Clear all content including registration
 -(void)resetAll;

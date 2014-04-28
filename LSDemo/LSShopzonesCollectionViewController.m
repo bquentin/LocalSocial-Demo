@@ -139,8 +139,10 @@
         content = [content stringByAppendingString:[product name]];
         content = [content stringByAppendingString:@"\n"];
         
-        content = [content stringByAppendingString:@"Description:"];
-        content = [content stringByAppendingString:[product description_1]];
+        content = [content stringByAppendingString:@"Cards:"];
+        content = [content stringByAppendingString:[[product cards] allObjects][0]];
+        content = [content stringByAppendingString:@"\n"];
+        content = [content stringByAppendingString:[[product cards] allObjects][1]];
         content = [content stringByAppendingString:@"\n"];
     }
 
