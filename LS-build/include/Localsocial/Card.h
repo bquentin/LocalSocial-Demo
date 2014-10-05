@@ -27,6 +27,7 @@
 
 @interface RTSCard : NSObject
 
+@property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSString * url_image;

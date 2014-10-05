@@ -22,9 +22,9 @@
     
     if(self){
         RTSConfiguration *config    = [RTSConfiguration sharedInstance];
-        config.client_id            = << fetch at dev.mylocalsocial.com >>;
-        config.client_secret        = << fetch at dev.mylocalsocial.com >>;
-        config.app_callback         = << fetch at dev.mylocalsocial.com >>;
+        config.client_id            = <FETCH AT dev.mylocalsocial.com>;
+        config.client_secret        = <FETCH AT dev.mylocalsocial.com>;
+        config.app_callback         = <FETCH AT dev.mylocalsocial.com>;
     }
     return self;
 }

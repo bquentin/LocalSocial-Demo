@@ -29,10 +29,11 @@
 @interface RTSRadio: NSObject
 
 @property (nonatomic, retain) NSString * address;
+@property (nonatomic, retain) NSString * range;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * proximity;
 @property (nonatomic, retain) NSNumber * proximity_zone;
-
+@property (nonatomic, retain) NSNumber * checked;
 @property (nonatomic, retain) RTSPlace   * place;
 @property (nonatomic, retain) RTSShopzone *shopzone;
 

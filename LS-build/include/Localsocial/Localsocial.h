@@ -38,7 +38,8 @@ typedef enum {
     RS_IN_PROGRESS,
     RS_ERROR,
     RS_ERROR_CACHE_MODE,
-    RS_ERROR_NETWORK
+    RS_ERROR_NETWORK,
+    RS_ERROR_REQUIRE_USER_REGISTRATION
 } RSStatus;
 
 typedef enum {
