@@ -22,9 +22,10 @@
     
     if(self){
         RTSConfiguration *config    = [RTSConfiguration sharedInstance];
-        config.client_id            = <FETCH AT dev.mylocalsocial.com>;
-        config.client_secret        = <FETCH AT dev.mylocalsocial.com>;
-        config.app_callback         = <FETCH AT dev.mylocalsocial.com>;
+        config.client_id            = << FETCH AT dev.mylocalsocial.com >>;
+        config.client_secret        = << FETCH AT dev.mylocalsocial.com >>;
+        config.app_callback         = << FETCH AT dev.mylocalsocial.com >>;
+        config.range                = 20000; // 20km
     }
     return self;
 }
@@ -46,6 +47,12 @@
                                                  name: RSWelcomeNoticeNotification
                                                object: nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(authorizationStatusChanged:)
+                                                 name: RSLocationChangeAuthorizationStatusNotification
+                                               object: nil];
+
+    
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(awardNotification:)
                                                  name: RSAwardNoticeNotification
@@ -101,10 +108,40 @@
     [LSLocalsocial willTerminate];
 }
 
+-(void)authorizationStatusChanged:(NSNotification *)notification {
+    if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
+        [NSTimer scheduledTimerWithTimeInterval:0.8
+                                         target:self
+                                       selector:@selector(discoverNearbyNoCache)
+                                       userInfo:nil repeats:NO];
+    }
+}
+
+-(void)discoverNearbyNoCache{
+    [LSLocalsocial discoverNearbyNoCache];
+}
+
 #pragma mark - Notifications
 
 -(void)appBecomeActiveNotification:(NSNotification *)notification {
-    [LSLocalsocial discoverNearby];
+    [self discoverAfterAuthorized];
+}
+
+-(void)discoverAfterAuthorized{
+    switch ([CLLocationManager authorizationStatus]) {
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorized:
+            [LSLocalsocial discoverNearby];
+            break;
+        case kCLAuthorizationStatusDenied:
+        case kCLAuthorizationStatusNotDetermined:
+        case kCLAuthorizationStatusRestricted:
+        default:
+            [NSTimer scheduledTimerWithTimeInterval:0.5
+                                             target:self
+                                           selector:@selector(discoverAfterAuthorized)
+                                           userInfo:nil repeats:NO];
+    }
 }
 
 /**
@@ -113,7 +150,6 @@
 -(void)networkStartNotification:(NSNotification *)notification {
     
     NSDictionary *data = [notification userInfo];
-    
     if(data){
         if([[data valueForKey:@"mode"] isEqualToString: @"register"]){
             UIApplication* app = [UIApplication sharedApplication];
@@ -133,7 +169,6 @@
 -(void)networkCompletedNotification:(NSNotification *)notification {
     
     NSDictionary *data = [notification userInfo];
-    
     if(data){
         if([[data valueForKey:@"mode"] isEqualToString: @"register"]){
             UIApplication* app = [UIApplication sharedApplication];

@@ -60,6 +60,7 @@ typedef void(^RSURLConnectionHandler)(BOOL success, NSError* error, id response)
 #define RSNetworkDidFinishNotification      @"RSNetworkDidFinishNotification"
 
 #define RSLocationDidChangeNotification     @"RSLocationDidChangeNotification"
+#define RSLocationChangeAuthorizationStatusNotification     @"RSLocationChangeAuthorizationStatusNotification"
 #define RSObjectsDidUpdateNotification      @"RSObjectsDidUpdateNotification"
 #define RSAllObjectsDidUpdateNotification   @"RSAllObjectsDidUpdateNotification"
 

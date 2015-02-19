@@ -194,6 +194,7 @@
 				ORGANIZATIONNAME = "Rococo Software Limited";
 				TargetAttributes = {
 					ED00DB1B14BB4917004B02ED = {
+						DevelopmentTeam = 2Y47R45577;
 						SystemCapabilities = {
 							com.apple.iOS = {
 								enabled = 0;
